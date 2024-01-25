@@ -92,14 +92,14 @@ const WordLadder = () => {
                 loading ? <Spinner /> :
                     <form onSubmit={(e) => handleSubmit(e)} name="form" className='word-ladder_container'>
                         <label htmlFor='firstWord'>First  Word: </label>
-                        <input type='text' value={firstWord} onChange={(e) => setFirstWord(e.target.value)} required />
+                        <input type='text' pattern="[A-Za-z]*" value={firstWord} onChange={(e) => setFirstWord(e.target.value)} required />
                         <ul className='word-ladder_list'>
                             {ladder.map((word, index) => (
                                 <li key={index}>{word}</li>
                             ))}
                         </ul>
                         <label htmlFor='firstWord'>Second  Word: </label>
-                        <input type='text' value={secondWord} onChange={(e) => setSecondWord(e.target.value)} required />
+                        <input type='text' pattern="[A-Za-z]*" value={secondWord} onChange={(e) => setSecondWord(e.target.value)} required />
                         {error && <p>*{error}</p>}
 
                         <button type='submit' className='button-submit' disabled={isButtonDisabled()}  >Solve</button>
