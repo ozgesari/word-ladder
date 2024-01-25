@@ -1,0 +1,79 @@
+.word-ladder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding: 0 4rem;
+  width: 500px;
+}
+.word-ladder_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+.word-ladder_header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1rem;
+  width: 100%;
+}
+
+.word-ladder_list {
+  max-height: 150px;
+  overflow-y: auto;
+  padding: 0;
+}
+.word-ladder_list li {
+  overflow: auto;
+  padding: 0.5rem 0;
+  font-size: 18px;
+  color: grey;
+  font-style: italic;
+}
+
+label {
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  font: 1em sans-serif;
+}
+
+P {
+  /* margin: 0; */
+  color: red;
+  font-size: 1rem;
+  font-style: italic;
+}
+.button-reset:hover {
+  color: #a5a2a2;
+}
+
+.button-reset {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font: 1em sans-serif;
+  cursor: pointer;
+}
+
+.button-submit {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font: 1em sans-serif;
+  cursor: pointer;
+}
