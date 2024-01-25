@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Spinner from '../Spinner/Spinner';
 import './WordLadder.css';
-import words from '../../utils/words'
+import { words } from '../../utils/words'
+import Modal from '../Modal/Modal';
 
 const WordLadder = () => {
     const [firstWord, setFirstWord] = useState('');
     const [secondWord, setSecondWord] = useState('');
     const [ladder, setLadder] = useState([]);
-    const [words, setWords] = useState([]);
+    const [wordList, setWords] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [error, setError] = useState('');
     useEffect(() => {
         const fetchData = async () => {
@@ -24,6 +26,15 @@ const WordLadder = () => {
         fetchData();
     }, []);
 
+
+    useEffect(() => {
+        if (((firstWord.length > 0 && !wordList.includes(firstWord)) && (secondWord.length > 0 && !wordList.includes(secondWord)))) {
+            setError('Word not found in dictionary');
+        }
+        else {
+            setError('');
+        }
+    }, [firstWord, secondWord])
 
 
     const handleSubmit = async (e) => {
@@ -44,6 +55,7 @@ const WordLadder = () => {
 
     return (
         <div className='word-ladder'>
+            {showModal && <Modal onClose={() => setShowModal(false)} />}
             <div className='word-ladder_header'>
                 <h1>Word Ladder</h1>
                 <button className='button-reset' disabled={loading} onClick={resetForm} >Reset Game</button>
